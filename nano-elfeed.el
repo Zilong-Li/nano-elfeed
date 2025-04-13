@@ -238,6 +238,7 @@
   (with-current-buffer (elfeed-search-buffer)
     (when elfeed-search-remain-on-entry (forward-line 1))
     (nano-elfeed-prev-entry)
+    (forward-line -1)
     (call-interactively #'elfeed-search-show-entry)))
 
 (setq elfeed-search-filter "@1-weeks-ago +unread"          
@@ -250,7 +251,7 @@
 (bind-key "<up>" #'nano-elfeed-prev-entry 'elfeed-search-mode-map)
 (bind-key "p" #'nano-elfeed-prev-entry 'elfeed-search-mode-map)
 
-(bind-key "p" #'nano-elfeed-prev-next 'elfeed-show-mode-map)
+(bind-key "p" #'nano-elfeed-show-prev 'elfeed-show-mode-map)
 (bind-key "n" #'nano-elfeed-show-next 'elfeed-show-mode-map)
 
 (add-hook 'elfeed-search-mode-hook #'nano-elfeed-search-mode)
