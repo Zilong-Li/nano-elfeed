@@ -23,7 +23,6 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 (require 's)
-(require 'stripes)
 (require 'hl-line)
 (require 'relative-date)
 (require 'elfeed)
@@ -191,12 +190,10 @@
         right-fringe-width 1
         left-margin-width 0
         right-margin-width 0
-        stripes-unit 1)
+        )
   (set-window-buffer nil (current-buffer))
 
-  (setq stripes-overlay-priority 50)
-  (stripes-mode 1)
-  (setq hl-line-overlay-priority 100)
+  (setq-local hl-line-overlay-priority 100)
   (hl-line-mode -1)
   (setq cursor-type nil)
   (face-remap-add-relative 'hl-line :inherit 'nano-faded-i)
